@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'dynamic_pages/home'
+
+  get 'dynamic_pages/artist'
+
   root 'application#hello'
 
   # The priority is based upon order of creation: first created -> highest priority.
