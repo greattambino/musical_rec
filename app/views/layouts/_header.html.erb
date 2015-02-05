@@ -1,0 +1,16 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "MusicalRec", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to "Home",      root_path %></li>
+        <li><%= link_to "Artists",   artist_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "About Us",  about_path %></li>
+        <li><%= link_to "Contact",   contact_path %></li>
+        <li><%= link_to "Sign Up",   signup_path %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
