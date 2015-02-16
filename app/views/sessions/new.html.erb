@@ -6,7 +6,7 @@
   <div class="row">
 
     <div class="col-xs-2 col-sm-6">
-      <h3>Returning Users</h3>
+      <h2>Returning Users</h2>
       <p>If you have an account with us, please log in here.</p>
 
       <%= form_for(:session, url: login_path) do |f| %>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="col-xs-2 col-sm-6">
-      <h3>New Users</h3>
+      <h2>New Users</h2>
       <p>By creating an account with us, you will be able to view and keep track of your favorite artists and more.</p>
       <%= link_to "Create an Account!", signup_path, class: "btn btn-primary" %>
     </div>

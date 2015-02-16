@@ -11,7 +11,9 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-
+.player-wrapper {
+         position: relative;
+}
 
 /* miscellaneous */
 
@@ -66,20 +68,40 @@ h1 {
 }
 
 h2 {
+  font-size: 1.7em;
+  letter-spacing: 0px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: $gray-light;
+}
+
+h3 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-top: 0px;
+  margin-bottom: 5px;
   text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
 
-h3 {
-  font-size: 1.7em;
-  letter-spacing: 0px;
-  margin-bottom: 30px;
-  text-align: left;
+h4 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-weight: normal;
 }
+
+h5 {
+  font-size: 0.9em;
+  margin-top: -20px;
+  font-weight: normal;
+  text-align: right;
+  padding-right: 0.2em;
+  color: white;
+}
+
+.highlightme { background-color: black;
+               padding: 0 5px;  }
 
 p {
   font-size: 1.1em;

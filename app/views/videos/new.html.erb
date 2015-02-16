@@ -1,0 +1,20 @@
+<% provide(:title, 'New Video') %>
+
+<h1>New video</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@video) do |f| %>
+    
+      <%= render 'shared/error_messages', object: @video %>
+
+      <div class="form-group">
+        <%= f.label :link %>
+        <%= f.text_field :link, class: 'form-control', required: true %>
+        <span class="help-block">A link to the video on YouTube.</span>
+      </div>
+
+      <%= f.submit "Upload video", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

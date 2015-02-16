@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root             'dynamic_pages#home'
+  root                'videos#index'
+  get    'home'    => 'dynamic_pages#home'
   get    'artist'  => 'dynamic_pages#artist'
   get    'about'   => 'static_pages#about'
   get    'contact' => 'static_pages#contact'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
+  resources :videos, only: [:index, :new, :create]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
