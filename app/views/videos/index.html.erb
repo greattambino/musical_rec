@@ -2,20 +2,22 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>Share your videos with the world!</h1>
-    <p>Click the button below to share your video from YouTube.</p>
+    <h1w><b>GOOD MUSIC IS GOOD MUSIC.</b></h1w>
+    <p><b>If you know an artist who deserves musical recognition, let's share their music and expose their talent. The only thing that can happen overnight is recognition. The talent was always in us.</b></p> 
+    <br>
     <p>
-      <%= link_to 'Add video now!', new_video_path, class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Share music!', new_video_path, class: 'btn btn-primary btn-lg' %>
     </p>
   </div>
 </div>
 
 <% if @videos.any? %>
-  <div class="container">
+  <div class="container-fluid">
     <h1>Trending videos</h1>
  
     <div id="player-wrapper"></div>
- 
+    <br></br>
+    <%= will_paginate %>
     <% @videos.in_groups_of(3) do |group| %>
       <div class="row">
         <% group.each do |video| %>
@@ -28,16 +30,24 @@
                 <% end %>
 
                 <h5><span class="highlightme"><%= video.duration %></span></h5>
+
                 <div class="caption">
-                  <h3><%= video.title %></h3>
-                  <h4>Author: <b><%= video.author %></b></h4>
+                  <div class="text_overflow">
+                    <h3><%= video.title %></h3>
+                  </div>
+                  <h4>Artist: <b><%= video.author %></b></h4>
                   
-                  <h4>
-                    <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> 
-                      <%= video.likes %>
-                    <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> 
-                      <%= video.dislikes %>
-                  </h4>
+                    <h4>
+                      <span class="glyphicon glyphicon-eye-open"></span> 
+                        <%= video.views %>
+                      <div class="pull-right">
+                        <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> 
+                          <%= video.likes %>
+                        <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> 
+                          <%= video.dislikes %>
+                      </div>
+                    </h4>
+
                 </div>
               </div>
             </div>
@@ -45,5 +55,6 @@
         <% end %>
       </div>
     <% end %>
+    <%= will_paginate %>
   </div>
 <% end %>

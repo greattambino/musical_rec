@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
  
   def index
-    @videos = Video.order('created_at DESC')
+    @videos = Video.order('created_at DESC').paginate(page: params[:page], per_page: 15)
   end
 
   def new

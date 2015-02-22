@@ -1,5 +1,7 @@
 jQuery ->
-  $('.yt_preview').click -> makeVideoPlayer $(this).data('uid')
+  $('.yt_preview').click (e) -> 
+    e.preventDefault()
+    makeVideoPlayer $(this).data('uid')
 
   # Initially the player is not loaded
   window.ytPlayerLoaded = false
@@ -36,7 +38,6 @@ jQuery ->
       })
     else
       window.ytplayer.loadVideoById(video)
-      window.ytplayer.pauseVideo()
     return
 
    

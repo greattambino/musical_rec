@@ -10,8 +10,9 @@
 #  uid        :string(255)
 #  author     :string(255)
 #  duration   :string(255)
-#  likes      :integer
-#  dislikes   :integer
+#  likes      :string
+#  dislikes   :string
+#  views      :string
 
 class Video < ActiveRecord::Base
 
@@ -44,11 +45,12 @@ private
       self.title    = video.title
       self.duration = parse_duration(video.duration)
       self.author   = video.author.name
-      self.likes    = video.rating.likes
-      self.dislikes = video.rating.dislikes
+      self.likes    = parse_count(video.rating.likes)
+      self.dislikes = parse_count(video.rating.dislikes)
+      self.views    = parse_count(video.view_count)
     rescue
-      self.title = '' ; self.duration = '00:00:00' ; self.author = '' ; 
-      self.likes = 0 ; self.dislikes = 0
+      self.title = '' ; self.duration = '00:00' ; self.author = '' ; 
+      self.likes = '0' ; self.dislikes = '0' ; self.views = '0'
     end
   end
    
@@ -66,5 +68,21 @@ private
     else
       hr.to_s + ':' + min.to_s + ':' + sec.to_s
     end
+  end
+
+  def parse_count(num)
+    str = num.to_s
+    if str.length <= 6
+      parse = str.reverse.scan(/.{1,3}/).join(',').reverse
+    elsif str.length > 6
+      if (num % 1000000) < 5000
+        str = (num / 1000000).to_s
+      else
+        str = (num.to_f / 1000000.to_f).round(2).to_s 
+      end
+      parse = str  + " mil"
+    end
+    
+    parse
   end
 end

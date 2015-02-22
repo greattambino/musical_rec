@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213105932) do
+ActiveRecord::Schema.define(version: 20150218083619) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(version: 20150213105932) do
     t.string   "uid"
     t.string   "author"
     t.string   "duration"
-    t.integer  "likes"
-    t.integer  "dislikes"
+    t.string   "likes"
+    t.string   "dislikes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "views"
   end
 
 end
