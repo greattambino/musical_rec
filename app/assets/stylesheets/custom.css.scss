@@ -138,14 +138,27 @@ p2 {
 .text_overflow {
   display: block; /* Fallback for non-webkit */
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  width: 290px;
   white-space: normal;
   overflow: hidden;
   line-height: 1.7em;
   height: 2.5em;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   &:hover {
+    overflow: visible;
+    padding-bottom: 38px;
+  }
+}
+
+a.videolink {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  white-space: normal;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  &:hover {
+    text-decoration: none;
     overflow: visible;
     padding-bottom: 38px;
   }

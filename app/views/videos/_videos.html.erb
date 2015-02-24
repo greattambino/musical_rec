@@ -2,14 +2,17 @@
   <div class="yt_video thumbnail">
 
     <%= link_to video.link do %> 
-      <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %> 
+      <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,             class: 'yt_preview img-rounded', :"data-uid" => video.uid %> 
     <% end %>
 
     <h5><span class="highlightme"><%= video.duration %></span></h5>
 
     <div class="caption">
       <div class="text_overflow">
-        <h3><%= video.title %></h3>
+        <h3>
+          <%= link_to video.title, root_path(anchor: "player-wrapper"), 
+                                             class: "videolink", :"data-uid" => video.uid %>
+        </h3>
       </div>
       <h4>Artist: <b><%= video.author %></b></h4>
       
