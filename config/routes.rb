@@ -8,8 +8,16 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  
   resources :users
-  resources :videos, only: [:index, :new, :create]
+
+  resources :videos do
+    collection do
+      get 'search'
+    end
+    resources :videos, only: [:index, :new, :create]
+  end
+  
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

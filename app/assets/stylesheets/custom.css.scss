@@ -125,6 +125,13 @@ p1 {
   color: white;
 }
 
+p2 {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
 .highlightme { background-color: black;
                padding: 0 5px;  }
 
@@ -162,6 +169,27 @@ p1 {
   }
 }
 
+#searchForm {
+  border: 0px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  position:relative;right:10px;
+  margin-right: -4px;
+  @include box_sizing;
+  background-color: $gray-medium-light;
+}
+
+#searchButton {
+  border: 0px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  position:relative;right:19px;
+  background-color: $gray-medium-light;
+  color: $gray-light;
+}
+
+
 
 /* jumbotron */
 
@@ -172,6 +200,11 @@ p1 {
 .container .jumbotron {
   text-align: center;
 }
+#btnShadow {
+  box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+
 
 /* footer */
 

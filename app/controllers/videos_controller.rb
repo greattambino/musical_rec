@@ -17,4 +17,12 @@ class VideosController < ApplicationController
       render 'new'
     end
   end
+
+  def search
+    if params[:search].present?
+      @videos = Video.search(params[:search])
+    else
+      @videos = Video.order('created_at DESC').paginate(page: params[:page], per_page: 15)
+    end
+  end
 end

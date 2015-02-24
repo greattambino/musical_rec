@@ -1,0 +1,29 @@
+<div class="col-md-4">
+  <div class="yt_video thumbnail">
+
+    <%= link_to video.link do %> 
+      <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %> 
+    <% end %>
+
+    <h5><span class="highlightme"><%= video.duration %></span></h5>
+
+    <div class="caption">
+      <div class="text_overflow">
+        <h3><%= video.title %></h3>
+      </div>
+      <h4>Artist: <b><%= video.author %></b></h4>
+      
+        <h4>
+          <span class="glyphicon glyphicon-eye-open"></span> 
+            <%= video.views %>
+          <div class="pull-right">
+            <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> 
+              <%= video.likes %>
+            <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> 
+              <%= video.dislikes %>
+          </div>
+        </h4>
+
+    </div>
+  </div>
+</div>

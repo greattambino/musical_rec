@@ -15,6 +15,7 @@
 #  views      :string
 
 class Video < ActiveRecord::Base
+  searchkick
 
   YT_LINK_FORMAT = /\A.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*\z/i
   validates :link, presence: true, format: YT_LINK_FORMAT
@@ -34,7 +35,6 @@ class Video < ActiveRecord::Base
       get_additional_info
     end
   end
-
 
 private
  
