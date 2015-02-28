@@ -1,21 +1,21 @@
 <div class="col-md-4">
   <div class="yt_video thumbnail">
-
-    <%= link_to video.link do %> 
-      <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,             class: 'yt_preview img-rounded', :"data-uid" => video.uid %> 
-    <% end %>
-
+    <a href="#">
+      <%= link_to video.link do %> 
+        <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,             class: 'yt_preview img-rounded', :"data-uid" => video.uid %> 
+      <% end %>
+    </a>
     <h5><span class="highlightme"><%= video.duration %></span></h5>
-
     <div class="caption">
       <div class="text_overflow">
-        <h3>
-          <%= link_to video.title, root_path(anchor: "player-wrapper"), 
-                                             class: "videolink", :"data-uid" => video.uid %>
-        </h3>
+        <a href="#">
+          <h3>
+            <%= link_to video.title, root_path(anchor: "player-wrapper"), 
+                                     class: "yt_preview videolink", :"data-uid" => video.uid %>
+          </h3>
+        </a>
       </div>
       <h4>Artist: <b><%= video.author %></b></h4>
-      
         <h4>
           <span class="glyphicon glyphicon-eye-open"></span> 
             <%= video.views %>
@@ -26,7 +26,6 @@
               <%= video.dislikes %>
           </div>
         </h4>
-
     </div>
   </div>
 </div>

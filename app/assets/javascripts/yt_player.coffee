@@ -3,6 +3,11 @@ jQuery ->
     e.preventDefault()
     makeVideoPlayer $(this).data('uid')
 
+  $('a').click (e) ->
+    $('html, body').animate({
+        scrollTop: $("#player-wrapper").offset().top-70
+    }, 1000);
+
   # Initially the player is not loaded
   window.ytPlayerLoaded = false
 
