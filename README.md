@@ -1,1 +1,1 @@
-This is a sample application for the MusicalRec mockup.
+MusicalRec mockup
